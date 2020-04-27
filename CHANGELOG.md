@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Testing the CI.
+
 ## [0.2.0]
 
 ### Added
