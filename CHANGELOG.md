@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0-1]
+
+Built on top of upstream rust-vmm/kvm-bindings v0.2.0.
+
+### Added
+
+- Added versioning support for kvm bindings structures used
+  in VM serialization on x86_64.
+
 ## [0.2.0]
 
 ### Added
