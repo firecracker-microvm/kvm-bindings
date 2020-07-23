@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0-1]
+
+### Added
+
+- [upstream] Enabled `fam-wrappers` support on arm and arm64.
+- [upstream] Added fam-wrapper for the arm specific `kvm_reg_list` struct.
+
 ## [0.2.0-2]
 
 ### Changed
