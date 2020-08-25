@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0-2]
+
+### Added
+
+- Added versioning support for kvm bindings structures used
+  in VM serialization on arm and arm64.
+
 ## [0.3.0-1]
 
 ### Added
