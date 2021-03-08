@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0-1]
+
+- [upstream] vmm-sys-utils dependency bumped to v0.8.0
+- versionize dependency bumped to v0.1.6
+
 ## [0.3.0-3]
 
 ### Changed
@@ -22,6 +27,13 @@
 - [upstream] Enabled `fam-wrappers` support on arm and arm64.
 - [upstream] Added fam-wrapper for the arm specific `kvm_reg_list` struct.
 
+## [0.3.0]
+
+### Added
+
+- Added versioning support for kvm bindings structures used
+  in VM serialization on x86_64.
+
 ## [0.2.0-2]
 
 ### Changed
@@ -31,11 +43,6 @@
 ## [0.2.0-1]
 
 Built on top of upstream rust-vmm/kvm-bindings v0.2.0.
-
-### Added
-
-- Added versioning support for kvm bindings structures used
-  in VM serialization on x86_64.
 
 ## [0.2.0]
 
