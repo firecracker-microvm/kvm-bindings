@@ -1,9 +1,23 @@
 # Changelog
 
+## [0.5.0]
+
+### Changed
+
+- Replaced the v4.20 bindings with the v5.13 ones.
+
+### Removed
+
+- Removed v4.14 bindings.
+
 ## [0.4.0-1]
 
 - [upstream] vmm-sys-utils dependency bumped to v0.8.0
 - versionize dependency bumped to v0.1.6
+
+## [0.4.0]
+
+- vmm-sys-utils dependency bumped to match kvm-ioctls.
 
 ## [0.3.0-3]
 
