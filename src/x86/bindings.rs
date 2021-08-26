@@ -1707,7 +1707,7 @@ fn bindgen_test_layout_kvm_regs() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_lapic_state {
     pub regs: [::std::os::raw::c_char; 1024usize],
 }
@@ -3730,7 +3730,7 @@ fn bindgen_test_layout_kvm_debugregs() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_xsave {
     pub region: [__u32; 1024usize],
 }
