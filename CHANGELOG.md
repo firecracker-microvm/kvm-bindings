@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.0-1]
+
+- [upstream] updated kvm-bindings to version 0.5.0
+
 ## [0.5.0]
 
 ### Changed
