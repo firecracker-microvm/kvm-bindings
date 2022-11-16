@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0-1]
+
+### Changed
+
+- Specify versionize dependencies via caret requirements instead of
+  comparison requirements
+
 ## [0.6.0]
 
 ### Changed
