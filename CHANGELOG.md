@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Specify versionize dependencies via caret requirements instead of
+- Specgdsify versionize dependencies via caret requirements instead of
   comparison requirements
 
 ## [0.6.0]
