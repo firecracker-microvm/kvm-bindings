@@ -746,7 +746,7 @@ pub type __u32 = ::std::os::raw::c_uint;
 pub type __s64 = ::std::os::raw::c_longlong;
 pub type __u64 = ::std::os::raw::c_ulonglong;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct __kernel_fd_set {
     pub fds_bits: [::std::os::raw::c_ulong; 16usize],
 }
@@ -796,7 +796,7 @@ pub type __kernel_size_t = __kernel_ulong_t;
 pub type __kernel_ssize_t = __kernel_long_t;
 pub type __kernel_ptrdiff_t = __kernel_long_t;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct __kernel_fsid_t {
     pub val: [::std::os::raw::c_int; 2usize],
 }
@@ -844,7 +844,7 @@ pub type __sum16 = __u16;
 pub type __wsum = __u32;
 pub type __poll_t = ::std::os::raw::c_uint;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_pt_regs {
     pub regs: [__u64; 31usize],
     pub sp: __u64,
@@ -906,7 +906,7 @@ fn bindgen_test_layout_user_pt_regs() {
 }
 #[repr(C)]
 #[repr(align(16))]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_fpsimd_state {
     pub vregs: [__uint128_t; 32usize],
     pub fpsr: __u32,
@@ -967,14 +967,14 @@ fn bindgen_test_layout_user_fpsimd_state() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_hwdebug_state {
     pub dbg_info: __u32,
     pub pad: __u32,
     pub dbg_regs: [user_hwdebug_state__bindgen_ty_1; 16usize],
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_hwdebug_state__bindgen_ty_1 {
     pub addr: __u64,
     pub ctrl: __u32,
@@ -1076,7 +1076,7 @@ fn bindgen_test_layout_user_hwdebug_state() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_sve_header {
     pub size: __u32,
     pub max_size: __u32,
@@ -1159,7 +1159,7 @@ fn bindgen_test_layout_user_sve_header() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_pac_mask {
     pub data_mask: __u64,
     pub insn_mask: __u64,
@@ -1199,7 +1199,7 @@ fn bindgen_test_layout_user_pac_mask() {
 }
 #[repr(C)]
 #[repr(align(16))]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_pac_address_keys {
     pub apiakey: __uint128_t,
     pub apibkey: __uint128_t,
@@ -1261,7 +1261,7 @@ fn bindgen_test_layout_user_pac_address_keys() {
 }
 #[repr(C)]
 #[repr(align(16))]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct user_pac_generic_keys {
     pub apgakey: __uint128_t,
 }
@@ -1290,7 +1290,7 @@ fn bindgen_test_layout_user_pac_generic_keys() {
 }
 #[repr(C)]
 #[repr(align(16))]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_regs {
     pub regs: user_pt_regs,
     pub sp_el1: __u64,
@@ -1363,7 +1363,7 @@ fn bindgen_test_layout_kvm_regs() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_vcpu_init {
     pub target: __u32,
     pub features: [__u32; 7usize],
@@ -1434,7 +1434,7 @@ fn bindgen_test_layout_kvm_fpu() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_guest_debug_arch {
     pub dbg_bcr: [__u64; 16usize],
     pub dbg_bvr: [__u64; 16usize],
@@ -1495,7 +1495,7 @@ fn bindgen_test_layout_kvm_guest_debug_arch() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_debug_exit_arch {
     pub hsr: __u32,
     pub far: __u64,
@@ -1534,7 +1534,7 @@ fn bindgen_test_layout_kvm_debug_exit_arch() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sync_regs {
     pub device_irq_level: __u64,
 }
@@ -1562,7 +1562,7 @@ fn bindgen_test_layout_kvm_sync_regs() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_pmu_event_filter {
     pub base_event: __u16,
     pub nevents: __u16,
@@ -1623,13 +1623,13 @@ fn bindgen_test_layout_kvm_pmu_event_filter() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_vcpu_events {
     pub exception: kvm_vcpu_events__bindgen_ty_1,
     pub reserved: [__u32; 12usize],
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_vcpu_events__bindgen_ty_1 {
     pub serror_pending: __u8,
     pub serror_has_esr: __u8,
@@ -1748,7 +1748,7 @@ fn bindgen_test_layout_kvm_vcpu_events() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_user_trace_setup {
     pub buf_size: __u32,
     pub buf_nr: __u32,
@@ -1787,7 +1787,7 @@ fn bindgen_test_layout_kvm_user_trace_setup() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_breakpoint {
     pub enabled: __u32,
     pub padding: __u32,
@@ -1837,7 +1837,7 @@ fn bindgen_test_layout_kvm_breakpoint() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_debug_guest {
     pub enabled: __u32,
     pub pad: __u32,
@@ -1898,7 +1898,7 @@ fn bindgen_test_layout_kvm_debug_guest() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_memory_region {
     pub slot: __u32,
     pub flags: __u32,
@@ -1961,7 +1961,7 @@ fn bindgen_test_layout_kvm_memory_region() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_userspace_memory_region {
     pub slot: __u32,
     pub flags: __u32,
@@ -2229,7 +2229,7 @@ impl Default for kvm_irqchip {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_pit_config {
     pub flags: __u32,
     pub pad: [__u32; 15usize],
@@ -2268,7 +2268,7 @@ fn bindgen_test_layout_kvm_pit_config() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_skeys {
     pub start_gfn: __u64,
     pub count: __u64,
@@ -2492,7 +2492,7 @@ pub union kvm_hyperv_exit__bindgen_ty_1 {
     pub syndbg: kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_3,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_1 {
     pub msr: __u32,
     pub pad2: __u32,
@@ -2585,7 +2585,7 @@ fn bindgen_test_layout_kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_1() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_2 {
     pub input: __u64,
     pub result: __u64,
@@ -2650,7 +2650,7 @@ fn bindgen_test_layout_kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_2() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_3 {
     pub msr: __u32,
     pub pad2: __u32,
@@ -2892,7 +2892,7 @@ pub union kvm_xen_exit__bindgen_ty_1 {
     pub hcall: kvm_xen_exit__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_xen_exit__bindgen_ty_1__bindgen_ty_1 {
     pub longmode: __u32,
     pub cpl: __u32,
@@ -3107,7 +3107,7 @@ pub union kvm_run__bindgen_ty_1 {
     pub padding: [::std::os::raw::c_char; 256usize],
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_1 {
     pub hardware_exit_reason: __u64,
 }
@@ -3141,7 +3141,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_1() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_2 {
     pub hardware_entry_failure_reason: __u64,
     pub cpu: __u32,
@@ -3188,7 +3188,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_2() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_3 {
     pub exception: __u32,
     pub error_code: __u32,
@@ -3236,7 +3236,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_3() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_4 {
     pub direction: __u8,
     pub size: __u8,
@@ -3326,7 +3326,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_4() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_5 {
     pub arch: kvm_debug_exit_arch,
 }
@@ -3360,7 +3360,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_5() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_6 {
     pub phys_addr: __u64,
     pub data: [__u8; 8usize],
@@ -3435,7 +3435,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_6() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_7 {
     pub nr: __u64,
     pub args: [__u64; 6usize],
@@ -3522,7 +3522,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_7() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_8 {
     pub rip: __u64,
     pub is_write: __u32,
@@ -3582,7 +3582,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_8() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_9 {
     pub icptcode: __u8,
     pub ipa: __u16,
@@ -3642,7 +3642,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_9() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_10 {
     pub trans_exc_code: __u64,
     pub pgm_code: __u32,
@@ -3693,7 +3693,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_10() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_11 {
     pub dcrn: __u32,
     pub data: __u32,
@@ -3758,7 +3758,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_11() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_12 {
     pub suberror: __u32,
     pub ndata: __u32,
@@ -3823,7 +3823,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_12() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_13 {
     pub gprs: [__u64; 32usize],
 }
@@ -3860,7 +3860,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_13() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_14 {
     pub nr: __u64,
     pub ret: __u64,
@@ -3924,7 +3924,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_14() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_15 {
     pub subchannel_id: __u16,
     pub subchannel_nr: __u16,
@@ -4031,7 +4031,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_15() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_16 {
     pub epr: __u32,
 }
@@ -4068,7 +4068,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_16() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_17 {
     pub type_: __u32,
     pub flags: __u64,
@@ -4119,7 +4119,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_17() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_18 {
     pub addr: __u64,
     pub ar: __u8,
@@ -4224,7 +4224,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_18() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_19 {
     pub vector: __u8,
 }
@@ -4261,7 +4261,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_19() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_20 {
     pub esr_iss: __u64,
     pub fault_ipa: __u64,
@@ -4312,7 +4312,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_20() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_21 {
     pub error: __u8,
     pub pad: [__u8; 7usize],
@@ -5169,7 +5169,7 @@ impl Default for kvm_coalesced_mmio_ring {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_translation {
     pub linear_address: __u64,
     pub physical_address: __u64,
@@ -5402,7 +5402,7 @@ impl Default for kvm_s390_mem_op {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_interrupt {
     pub irq: __u32,
 }
@@ -5688,7 +5688,7 @@ fn bindgen_test_layout_kvm_signal_mask() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_tpr_access_ctl {
     pub enabled: __u32,
     pub flags: __u32,
@@ -5738,7 +5738,7 @@ fn bindgen_test_layout_kvm_tpr_access_ctl() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_vapic_addr {
     pub vapic_addr: __u64,
 }
@@ -5794,7 +5794,7 @@ fn bindgen_test_layout_kvm_mp_state() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_psw {
     pub mask: __u64,
     pub addr: __u64,
@@ -5833,7 +5833,7 @@ fn bindgen_test_layout_kvm_s390_psw() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_interrupt {
     pub type_: __u32,
     pub parm: __u32,
@@ -5883,7 +5883,7 @@ fn bindgen_test_layout_kvm_s390_interrupt() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_io_info {
     pub subchannel_id: __u16,
     pub subchannel_nr: __u16,
@@ -5944,7 +5944,7 @@ fn bindgen_test_layout_kvm_s390_io_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_ext_info {
     pub ext_params: __u32,
     pub pad: __u32,
@@ -5994,7 +5994,7 @@ fn bindgen_test_layout_kvm_s390_ext_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_pgm_info {
     pub trans_exc_code: __u64,
     pub mon_code: __u64,
@@ -6156,7 +6156,7 @@ fn bindgen_test_layout_kvm_s390_pgm_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_prefix_info {
     pub address: __u32,
 }
@@ -6184,7 +6184,7 @@ fn bindgen_test_layout_kvm_s390_prefix_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_extcall_info {
     pub code: __u16,
 }
@@ -6212,7 +6212,7 @@ fn bindgen_test_layout_kvm_s390_extcall_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_emerg_info {
     pub code: __u16,
 }
@@ -6240,7 +6240,7 @@ fn bindgen_test_layout_kvm_s390_emerg_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_stop_info {
     pub flags: __u32,
 }
@@ -6268,7 +6268,7 @@ fn bindgen_test_layout_kvm_s390_stop_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_mchk_info {
     pub cr14: __u64,
     pub mcic: __u64,
@@ -6537,7 +6537,7 @@ impl Default for kvm_s390_irq {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_irq_state {
     pub buf: __u64,
     pub flags: __u32,
@@ -6598,7 +6598,7 @@ fn bindgen_test_layout_kvm_s390_irq_state() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_guest_debug {
     pub control: __u32,
     pub pad: __u32,
@@ -6655,7 +6655,7 @@ pub const kvm_ioeventfd_flag_nr_fast_mmio: ::std::os::raw::c_uint = 4;
 pub const kvm_ioeventfd_flag_nr_max: ::std::os::raw::c_uint = 5;
 pub type _bindgen_ty_1 = ::std::os::raw::c_uint;
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ioeventfd {
     pub datamatch: __u64,
     pub addr: __u64,
@@ -6747,7 +6747,7 @@ impl Default for kvm_ioeventfd {
     }
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_enable_cap {
     pub cap: __u32,
     pub flags: __u32,
@@ -6817,7 +6817,7 @@ impl Default for kvm_enable_cap {
     }
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ppc_pvinfo {
     pub flags: __u32,
     pub hcall: [__u32; 4usize],
@@ -6876,7 +6876,7 @@ impl Default for kvm_ppc_pvinfo {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ppc_one_page_size {
     pub page_shift: __u32,
     pub pte_enc: __u32,
@@ -6917,7 +6917,7 @@ fn bindgen_test_layout_kvm_ppc_one_page_size() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ppc_one_seg_page_size {
     pub page_shift: __u32,
     pub slb_enc: __u32,
@@ -6971,7 +6971,7 @@ fn bindgen_test_layout_kvm_ppc_one_seg_page_size() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ppc_smmu_info {
     pub flags: __u64,
     pub slb_size: __u32,
@@ -7043,7 +7043,7 @@ fn bindgen_test_layout_kvm_ppc_smmu_info() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_ppc_resize_hpt {
     pub flags: __u64,
     pub shift: __u32,
@@ -7093,7 +7093,7 @@ fn bindgen_test_layout_kvm_ppc_resize_hpt() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_irq_routing_irqchip {
     pub irqchip: __u32,
     pub pin: __u32,
@@ -7247,7 +7247,7 @@ impl Default for kvm_irq_routing_msi {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_irq_routing_s390_adapter {
     pub ind_addr: __u64,
     pub summary_addr: __u64,
@@ -7331,7 +7331,7 @@ fn bindgen_test_layout_kvm_irq_routing_s390_adapter() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_irq_routing_hv_sint {
     pub vcpu: __u32,
     pub sint: __u32,
@@ -7606,7 +7606,7 @@ impl Default for kvm_irq_routing {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_irqfd {
     pub fd: __u32,
     pub gsi: __u32,
@@ -7678,7 +7678,7 @@ fn bindgen_test_layout_kvm_irqfd() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_clock_data {
     pub clock: __u64,
     pub flags: __u32,
@@ -7728,7 +7728,7 @@ fn bindgen_test_layout_kvm_clock_data() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_config_tlb {
     pub params: __u64,
     pub array: __u64,
@@ -7789,7 +7789,7 @@ fn bindgen_test_layout_kvm_config_tlb() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_dirty_tlb {
     pub bitmap: __u64,
     pub num_dirty: __u32,
@@ -7906,7 +7906,7 @@ fn bindgen_test_layout_kvm_one_reg() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_msi {
     pub address_lo: __u32,
     pub address_hi: __u32,
@@ -7989,7 +7989,7 @@ fn bindgen_test_layout_kvm_msi() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_arm_device_addr {
     pub id: __u64,
     pub addr: __u64,
@@ -8028,7 +8028,7 @@ fn bindgen_test_layout_kvm_arm_device_addr() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_create_device {
     pub type_: __u32,
     pub fd: __u32,
@@ -8078,7 +8078,7 @@ fn bindgen_test_layout_kvm_create_device() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_device_attr {
     pub flags: __u32,
     pub group: __u32,
@@ -8151,7 +8151,7 @@ pub const kvm_device_type_KVM_DEV_TYPE_ARM_PV_TIME: kvm_device_type = 10;
 pub const kvm_device_type_KVM_DEV_TYPE_MAX: kvm_device_type = 11;
 pub type kvm_device_type = ::std::os::raw::c_uint;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_vfio_spapr_tce {
     pub groupfd: __s32,
     pub tablefd: __s32,
@@ -8190,7 +8190,7 @@ fn bindgen_test_layout_kvm_vfio_spapr_tce() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_ucas_mapping {
     pub user_addr: __u64,
     pub vcpu_addr: __u64,
@@ -8240,7 +8240,7 @@ fn bindgen_test_layout_kvm_s390_ucas_mapping() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_enc_region {
     pub addr: __u64,
     pub size: __u64,
@@ -8279,7 +8279,7 @@ fn bindgen_test_layout_kvm_enc_region() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_pv_sec_parm {
     pub origin: __u64,
     pub length: __u64,
@@ -8318,7 +8318,7 @@ fn bindgen_test_layout_kvm_s390_pv_sec_parm() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_s390_pv_unp {
     pub addr: __u64,
     pub size: __u64,
@@ -8376,7 +8376,7 @@ pub const pv_cmd_id_KVM_PV_PREP_RESET: pv_cmd_id = 5;
 pub const pv_cmd_id_KVM_PV_UNSHARE_ALL: pv_cmd_id = 6;
 pub type pv_cmd_id = ::std::os::raw::c_uint;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_pv_cmd {
     pub cmd: __u32,
     pub rc: __u16,
@@ -8474,7 +8474,7 @@ pub union kvm_xen_hvm_attr__bindgen_ty_1 {
     pub pad: [__u64; 8usize],
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_xen_hvm_attr__bindgen_ty_1__bindgen_ty_1 {
     pub gfn: __u64,
 }
@@ -8649,7 +8649,7 @@ pub union kvm_xen_vcpu_attr__bindgen_ty_1 {
     pub runstate: kvm_xen_vcpu_attr__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_xen_vcpu_attr__bindgen_ty_1__bindgen_ty_1 {
     pub state: __u64,
     pub state_entry_time: __u64,
@@ -8891,7 +8891,7 @@ pub const sev_cmd_id_KVM_SEV_SEND_CANCEL: sev_cmd_id = 21;
 pub const sev_cmd_id_KVM_SEV_NR_MAX: sev_cmd_id = 22;
 pub type sev_cmd_id = ::std::os::raw::c_uint;
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_cmd {
     pub id: __u32,
     pub data: __u64,
@@ -8952,7 +8952,7 @@ fn bindgen_test_layout_kvm_sev_cmd() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_launch_start {
     pub handle: __u32,
     pub policy: __u32,
@@ -9039,7 +9039,7 @@ fn bindgen_test_layout_kvm_sev_launch_start() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_launch_update_data {
     pub uaddr: __u64,
     pub len: __u32,
@@ -9080,7 +9080,7 @@ fn bindgen_test_layout_kvm_sev_launch_update_data() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_launch_secret {
     pub hdr_uaddr: __u64,
     pub hdr_len: __u32,
@@ -9167,7 +9167,7 @@ fn bindgen_test_layout_kvm_sev_launch_secret() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_launch_measure {
     pub uaddr: __u64,
     pub len: __u32,
@@ -9206,7 +9206,7 @@ fn bindgen_test_layout_kvm_sev_launch_measure() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_guest_status {
     pub handle: __u32,
     pub policy: __u32,
@@ -9256,7 +9256,7 @@ fn bindgen_test_layout_kvm_sev_guest_status() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_dbg {
     pub src_uaddr: __u64,
     pub dst_uaddr: __u64,
@@ -9306,7 +9306,7 @@ fn bindgen_test_layout_kvm_sev_dbg() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_attestation_report {
     pub mnonce: [__u8; 16usize],
     pub uaddr: __u64,
@@ -9360,7 +9360,7 @@ fn bindgen_test_layout_kvm_sev_attestation_report() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_send_start {
     pub policy: __u32,
     pub pdh_cert_uaddr: __u64,
@@ -9488,7 +9488,7 @@ fn bindgen_test_layout_kvm_sev_send_start() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_send_update_data {
     pub hdr_uaddr: __u64,
     pub hdr_len: __u32,
@@ -9583,7 +9583,7 @@ fn bindgen_test_layout_kvm_sev_send_update_data() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_receive_start {
     pub handle: __u32,
     pub policy: __u32,
@@ -9670,7 +9670,7 @@ fn bindgen_test_layout_kvm_sev_receive_start() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_sev_receive_update_data {
     pub hdr_uaddr: __u64,
     pub hdr_len: __u32,
@@ -10004,7 +10004,7 @@ impl Default for kvm_assigned_irq {
     }
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_assigned_msix_nr {
     pub assigned_dev_id: __u32,
     pub entry_nr: __u16,
@@ -10056,7 +10056,7 @@ fn bindgen_test_layout_kvm_assigned_msix_nr() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_assigned_msix_entry {
     pub assigned_dev_id: __u32,
     pub gsi: __u32,
@@ -10119,7 +10119,7 @@ fn bindgen_test_layout_kvm_assigned_msix_entry() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_hyperv_eventfd {
     pub conn_id: __u32,
     pub fd: __s32,
@@ -10180,7 +10180,7 @@ fn bindgen_test_layout_kvm_hyperv_eventfd() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Versionize)]
 pub struct kvm_dirty_gfn {
     pub flags: __u32,
     pub slot: __u32,
