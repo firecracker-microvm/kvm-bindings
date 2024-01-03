@@ -121,10 +121,13 @@ mod tests {
         let mut wrapper2 = wrapper.clone();
         assert!(wrapper == wrapper2);
 
-        wrapper.as_mut_fam_struct().pad = 1;
-        assert!(wrapper != wrapper2);
-        wrapper2.as_mut_fam_struct().pad = 1;
-        assert!(wrapper == wrapper2);
+        // SAFETY: We don't touch the length of the header.
+        unsafe {
+            wrapper.as_mut_fam_struct().pad = 1;
+            assert!(wrapper != wrapper2);
+            wrapper2.as_mut_fam_struct().pad = 1;
+            assert!(wrapper == wrapper2);
+        }
 
         wrapper.as_mut_slice()[1].data = 1;
         assert!(wrapper != wrapper2);
