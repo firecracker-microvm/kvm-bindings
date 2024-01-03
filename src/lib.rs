@@ -12,6 +12,9 @@
 #[cfg(feature = "fam-wrappers")]
 extern crate vmm_sys_util;
 
+extern crate versionize;
+extern crate versionize_derive;
+
 #[cfg(target_arch = "x86_64")]
 mod x86_64;
 #[cfg(target_arch = "x86_64")]
