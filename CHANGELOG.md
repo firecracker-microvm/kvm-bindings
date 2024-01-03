@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.0-2]
+
+### Changed
+
+- [[#22](https://github.com/firecracker-microvm/kvm-bindings/pull/22)]: Updated vmm-sys-utils dependency to 0.12.1
+
 ## [0.6.0-1]
 
 ### Changed
