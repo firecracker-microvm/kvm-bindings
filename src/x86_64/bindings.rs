@@ -4027,6 +4027,14 @@ pub struct kvm_xsave {
     pub region: [__u32; 1024usize],
     pub extra: __IncompleteArrayField<__u32>,
 }
+impl Clone for kvm_xsave {
+    fn clone(&self) -> Self {
+        kvm_xsave {
+            region: self.region,
+            extra: __IncompleteArrayField(std::marker::PhantomData, []),
+        }
+    }
+}
 #[test]
 fn bindgen_test_layout_kvm_xsave() {
     const UNINIT: ::std::mem::MaybeUninit<kvm_xsave> = ::std::mem::MaybeUninit::uninit();
