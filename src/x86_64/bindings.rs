@@ -3966,7 +3966,7 @@ fn bindgen_test_layout_kvm_debugregs() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Copy, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct kvm_xsave {
     #[serde(with = "BigArray")]
     pub region: [__u32; 1024usize],
@@ -4194,7 +4194,9 @@ fn bindgen_test_layout_kvm_sync_regs() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq, Serialize, Deserialize)]
 pub struct kvm_vmx_nested_state_data {
+    #[serde(with = "BigArray")]
     pub vmcs12: [__u8; 4096usize],
+    #[serde(with = "BigArray")]
     pub shadow_vmcs12: [__u8; 4096usize],
 }
 #[test]
@@ -4368,6 +4370,7 @@ fn bindgen_test_layout_kvm_vmx_nested_state_hdr() {
 #[repr(C)]
 #[derive(Debug, Copy, Clone, PartialEq, Serialize, Deserialize)]
 pub struct kvm_svm_nested_state_data {
+    #[serde(with = "BigArray")]
     pub vmcb12: [__u8; 4096usize],
 }
 #[test]
@@ -10173,6 +10176,7 @@ pub struct kvm_ioeventfd {
     pub len: __u32,
     pub fd: __s32,
     pub flags: __u32,
+    #[serde(with = "BigArray")]
     pub pad: [__u8; 36usize],
 }
 #[test]
@@ -10265,6 +10269,7 @@ pub struct kvm_enable_cap {
     pub cap: __u32,
     pub flags: __u32,
     pub args: [__u64; 4usize],
+    #[serde(with = "BigArray")]
     pub pad: [__u8; 64usize],
 }
 #[test]
@@ -10336,6 +10341,7 @@ impl Default for kvm_enable_cap {
 pub struct kvm_ppc_pvinfo {
     pub flags: __u32,
     pub hcall: [__u32; 4usize],
+    #[serde(with = "BigArray")]
     pub pad: [__u8; 108usize],
 }
 #[test]
