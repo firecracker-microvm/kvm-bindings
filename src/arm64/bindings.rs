@@ -1857,7 +1857,7 @@ fn bindgen_test_layout_kvm_pmu_event_filter() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
 pub struct kvm_vcpu_events {
     pub exception: kvm_vcpu_events__bindgen_ty_1,
     pub reserved: [__u32; 12usize],
@@ -1973,7 +1973,7 @@ fn bindgen_test_layout_kvm_vcpu_events() {
     );
 }
 #[repr(C)]
-#[derive(Debug, Copy, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct kvm_arm_copy_mte_tags {
     pub guest_ipa: __u64,
     pub length: __u64,
@@ -2407,7 +2407,7 @@ pub struct kvm_irqchip {
     pub chip: kvm_irqchip__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub union kvm_irqchip__bindgen_ty_1 {
     pub dummy: [::std::os::raw::c_char; 512usize],
 }
@@ -2640,7 +2640,7 @@ pub struct kvm_s390_cmma_log {
     pub values: __u64,
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub union kvm_s390_cmma_log__bindgen_ty_1 {
     pub remaining: __u64,
     pub mask: __u64,
@@ -2772,14 +2772,14 @@ pub struct kvm_hyperv_exit {
     pub u: kvm_hyperv_exit__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub union kvm_hyperv_exit__bindgen_ty_1 {
     pub synic: kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_1,
     pub hcall: kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_2,
     pub syndbg: kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_3,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
 pub struct kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_1 {
     pub msr: __u32,
     pub pad2: __u32,
@@ -3151,12 +3151,12 @@ pub struct kvm_xen_exit {
     pub u: kvm_xen_exit__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub union kvm_xen_exit__bindgen_ty_1 {
     pub hcall: kvm_xen_exit__bindgen_ty_1__bindgen_ty_1,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Default, Copy, Clone, PartialEq)]
 pub struct kvm_xen_exit__bindgen_ty_1__bindgen_ty_1 {
     pub longmode: __u32,
     pub cpl: __u32,
@@ -3330,7 +3330,7 @@ impl ::std::fmt::Debug for kvm_xen_exit {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_run {
     pub request_interrupt_window: __u8,
     pub immediate_exit: __u8,
