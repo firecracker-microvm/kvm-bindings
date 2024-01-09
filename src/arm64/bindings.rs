@@ -2400,7 +2400,7 @@ impl ::std::fmt::Debug for kvm_irq_level {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_irqchip {
     pub chip_id: __u32,
     pub pad: __u32,
@@ -2631,7 +2631,7 @@ fn bindgen_test_layout_kvm_s390_skeys() {
 }
 #[doc = " kvm_s390_cmma_log - Used for CMMA migration.\n\n Used both for input and output.\n\n @start_gfn: Guest page number to start from.\n @count: Size of the result buffer.\n @flags: Control operation mode via KVM_S390_CMMA_* flags\n @remaining: Used with KVM_S390_GET_CMMA_BITS. Indicates how many dirty\n             pages are still remaining.\n @mask: Used with KVM_S390_SET_CMMA_BITS. Bitmap of bits to actually set\n        in the PGSTE.\n @values: Pointer to the values buffer.\n\n Used in KVM_S390_{G,S}ET_CMMA_BITS ioctls."]
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_s390_cmma_log {
     pub start_gfn: __u64,
     pub count: __u32,
@@ -2765,7 +2765,7 @@ impl ::std::fmt::Debug for kvm_s390_cmma_log {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_hyperv_exit {
     pub type_: __u32,
     pub pad1: __u32,
@@ -2779,7 +2779,7 @@ pub union kvm_hyperv_exit__bindgen_ty_1 {
     pub syndbg: kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_3,
 }
 #[repr(C)]
-#[derive(Debug, Default, Copy, Clone, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialEq, Serialize, Deserialize)]
 pub struct kvm_hyperv_exit__bindgen_ty_1__bindgen_ty_1 {
     pub msr: __u32,
     pub pad2: __u32,
@@ -3145,7 +3145,7 @@ impl ::std::fmt::Debug for kvm_hyperv_exit {
     }
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_xen_exit {
     pub type_: __u32,
     pub u: kvm_xen_exit__bindgen_ty_1,
@@ -4041,7 +4041,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_12() {
     );
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_13 {
     pub suberror: __u32,
     pub ndata: __u32,
@@ -4430,7 +4430,7 @@ fn bindgen_test_layout_kvm_run__bindgen_ty_1__bindgen_ty_17() {
     );
 }
 #[repr(C)]
-#[derive(Copy, Clone, Serialize, Deserialize)]
+#[derive(Copy, Clone)]
 pub struct kvm_run__bindgen_ty_1__bindgen_ty_18 {
     pub type_: __u32,
     pub ndata: __u32,
