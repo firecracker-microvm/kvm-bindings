@@ -97,7 +97,7 @@ pub type MsrList = FamStructWrapper<kvm_msr_list>;
 #[cfg(test)]
 mod tests {
     use super::{CpuId, MsrList, Msrs};
-    use x86_64::bindings::kvm_cpuid_entry2;
+    use crate::x86_64::bindings::kvm_cpuid_entry2;
 
     #[test]
     fn test_cpuid_eq() {
