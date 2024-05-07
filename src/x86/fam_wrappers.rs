@@ -121,10 +121,13 @@ mod tests {
         let mut wrapper2 = wrapper.clone();
         assert!(wrapper == wrapper2);
 
-        wrapper.as_mut_fam_struct().pad = 1;
-        assert!(wrapper != wrapper2);
-        wrapper2.as_mut_fam_struct().pad = 1;
-        assert!(wrapper == wrapper2);
+        // SAFETY: we do not modify the "len" field
+        unsafe {
+            wrapper.as_mut_fam_struct().pad = 1;
+            assert!(wrapper != wrapper2);
+            wrapper2.as_mut_fam_struct().pad = 1;
+            assert!(wrapper == wrapper2);
+        }
 
         wrapper.as_mut_slice()[1].data = 1;
         assert!(wrapper != wrapper2);
