@@ -1,6 +1,9 @@
 [![Build Status](https://travis-ci.org/rust-vmm/kvm-bindings.svg?branch=master)](https://travis-ci.org/rust-vmm/kvm-bindings)
 [![Crates.io](https://img.shields.io/crates/v/kvm-bindings.svg)](https://crates.io/crates/kvm-bindings)
 ![](https://img.shields.io/crates/l/kvm-bindings.svg)
+
+# This fork is archived. The serialization functionality has been merged [upstream](https://github.com/rust-vmm/kvm-bindings) since 2024/04/16
+
 # kvm-bindings
 Rust FFI bindings to KVM, generated using
 [bindgen](https://crates.io/crates/bindgen). It currently has support for the
